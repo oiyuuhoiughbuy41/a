@@ -8,31 +8,27 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
     <meta name="format-detection" content="telephone=no">
     <script>
-    Array.prototype.indexOf = function(val) { 
-    	for (var i = 0; i < this.length; i++) { 
-    	if (this[i] == val) return i; 
-    	} 
-    	return -1; 
+		Array.prototype.indexOf = function(val) { 
+    		for (var i = 0; i < this.length; i++) { 
+    			if (this[i] == val) return i; 
+    		} 
+    		return -1; 
     	};
-   	Array.prototype.remove = function(val) { 
-   		var index = this.indexOf(val); 
-   		if (index > -1) { 
-   		this.splice(index, 1); 
-   		} 
+   		Array.prototype.remove = function(val) { 
+   			var index = this.indexOf(val); 
+   			if (index > -1) { 
+   				this.splice(index, 1); 
+   			} 
    		};
-    var linkArr = ["qmfy1.github.io", "ajklsmnah19.github.io", "asdajksdnasdih201.github.io"];
-    linkArr.remove(document.domain);
-    var link = linkArr[Math.floor(Math.random() * linkArr.length)];
-    var redata = document.referrer.split('/');
-    if(redata[2]) {
-    	if (link != redata[2] && link != document.domain) {
-    		document.location.href = 'https://' + link + '/' + document.location.toString().split("io/")[1];
-    	}
-    }else {
-    	if (link != document.domain) {
-    		document.location.href = 'https://' + link + '/' + document.location.toString().split("io/")[1];
-    	}
-    }
+	    
+    	var linkArr = ["qmfy1.github.io", "ajklsmnah19.github.io", "asdajksdnasdih201.github.io"];
+	    var redata = document.referrer.split('/');
+
+	    if(!redata[2] || redata[2] == document.domain || linkArr.indexOf(redata[2]) < 0) {
+	    	linkArr.remove(document.domain);
+	    	var link = linkArr[Math.floor(Math.random() * linkArr.length)];
+			document.location.href = 'https://' + link + '/' + document.location.toString().split("io/")[1];
+	    }
     
         window.onhashchange=function(){jp();};
         function jp()
@@ -153,7 +149,7 @@
                             <img src="https://qqpublic.qpic.cn/qq_public/0/0-3022687459-1CE0F1A070E00EFEFB1CF805BA93DED3/0?fmt=jpeg&size=26&rs=27-27&h=374&w=268&ppv=1" onerror="show_tip();"></a>
                         <div class="figure_info_center">
                             <strong class="figure_title">
-                                <a href="niu.php">流浪地球
+                                <a href="niu.html">流浪地球
                                     <br>类型: 科幻 / 灾难
                                     <br>上映日期: 2019-02-05
                                     <br>清晰度: 蓝光
@@ -167,7 +163,7 @@
                             <img src="https://qqpublic.qpic.cn/qq_public/0/0-2828539956-C7E3164CBF0737BB203B0FB8ED5608CC/0?fmt=jpeg&size=25&rs=26-26&h=378&w=264&ppv=1" onerror="show_tip();"></a>
                         <div class="figure_info_center">
                             <strong class="figure_title">
-                                <a href="xing.php">新喜剧之王
+                                <a href="xing.html">新喜剧之王
                                     <br>类型: 剧情 / 喜剧
                                     <br>上映日期: 2019-02-05
                                     <br>清晰度: 蓝光
@@ -181,7 +177,7 @@
                             <img src="https://qqpublic.qpic.cn/qq_public/0/0-2263549451-1065F6FA1C9700ABE6FD4045555B2148/0?fmt=jpeg&size=26&rs=27-27&h=379&w=265&ppv=1" onerror="show_tip();"></a>
                         <div class="figure_info_center">
                             <strong class="figure_title">
-                                <a href="feng.php">疯狂的外星人
+                                <a href="feng.html">疯狂的外星人
                                     <br>类型: 喜剧 / 科幻
                                     <br>上映日期: 2019-02-05
                                     <br>清晰度: 蓝光
